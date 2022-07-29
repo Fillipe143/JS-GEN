@@ -1,13 +1,13 @@
 /**
- * @typedef Coordinate
+ * @typedef {Object} Coordinate
  * @property {number} x
  * @property {number} y
  * 
- * @typedef Dimension
+ * @typedef {Object} Dimension
  * @property {number} width
  * @property {number} height
  * 
- * @typedef Scale
+ * @typedef {Object} Scale
  * @property {number} x
  * @property {number} y
  */
