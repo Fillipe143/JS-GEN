@@ -1,16 +1,18 @@
 export default class Sprite {
     /**
-     * @typedef Dimension
-     * @property {number} width
-     * @property {number} height
-     * 
      * @param {string[]} paths 
      * @param {Dimension} dimension 
      */
     constructor(paths, dimension) {
+        this.dimension = dimension
+        
         /** @type {HTMLImageElement[]} */
         this.frames = []
         this.index = 0
+
+        /** @type {Scale} */
+        this.scale = { x: 1, y: 1 }
+        this.angle = 0
 
         paths.forEach(path => {
             const image = new Image(dimension.width, dimension.height)

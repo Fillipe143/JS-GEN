@@ -14,11 +14,17 @@ export default class Game {
         this.objectsList = []
     }
 
+    /** @param {BaseObject} object */
+    addObject(object) {
+        this.objectsList.push(object)
+    }
+
     update() {
         this.objectsList.forEach(object => object.update())
     }
     
     render() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
         this.objectsList.forEach(object => object.draw())
     }
 
