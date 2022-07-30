@@ -17,7 +17,10 @@ export default class Player extends BaseObject {
         const hdir = keyboard_check('d') - keyboard_check('a')
         const vdir = keyboard_check('s') - keyboard_check('w')
 
-        this.coord.x += hdir * this.speed
-        this.coord.y += vdir * this.speed
+        if (hdir) this.coord.x += hdir * this.speed
+        else if (vdir) this.coord.y += vdir * this.speed
+
+        if (hdir != 0) this.sprite.angle = hdir * -90
+        else if (vdir != 0) this.sprite.angle = 90 * vdir - 90 
     }
 }
